@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="XamarinExpander.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3"
+               HasShadow="True"
+               WidthRequest="50">
+            <Label FontSize="Title"
+                   HorizontalOptions="Center"
+                   Text="Expander"
+                   TextColor="White"
+                   VerticalOptions="Center" />
+        </Frame>
+
+        <Frame HasShadow="True"
+               HorizontalOptions="Fill"
+               VerticalOptions="Center">
+
+            <StackLayout BindableLayout.ItemsSource="{Binding Messages, Mode=TwoWay}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Expander>
+                                <Expander.Header>
+                                    <Label FontSize="Large" Text="{Binding Header}" />
+                                </Expander.Header>
+                                <StackLayout>
+                                    <Label FontSize="Caption" Text="Detail" />
+                                    <Label FontSize="Body" Text="{Binding Detail}" />
+                                    <Label FontSize="Caption" Text="Solution" />
+                                    <Label FontSize="Body" Text="{Binding Solution}" />
+                                </StackLayout>
+                            </Expander>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>

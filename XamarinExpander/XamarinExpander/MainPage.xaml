@@ -17,9 +17,7 @@
                    VerticalOptions="Center" />
         </Frame>
 
-        <Frame HasShadow="True"
-               HorizontalOptions="Fill"
-               VerticalOptions="Center">
+        <Frame HorizontalOptions="Fill" VerticalOptions="Center">
 
             <StackLayout BindableLayout.ItemsSource="{Binding Messages, Mode=TwoWay}">
                 <BindableLayout.ItemTemplate>
